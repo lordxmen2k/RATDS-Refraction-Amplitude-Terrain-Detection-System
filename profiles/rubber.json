@@ -1,0 +1,55 @@
+{
+  "name": "rubber",
+  "description": "Smooth matte rubber",
+  "display_color": "#455A64",
+  "calibrated": false,
+  "calibration_date": null,
+  "n_images": 0,
+  "n_patches": 0,
+  "patch_size": 128,
+  "stride": 64,
+  "percentile_margin": 0.1,
+  "source_images": [],
+  "note": "This is an ESTIMATED profile based on theoretical values. Run calibrate.py with real images to improve accuracy.",
+  "synthetic": {
+    "color_tint": [
+      60,
+      65,
+      70
+    ],
+    "H_range": [
+      -0.25,
+      0.7
+    ]
+  },
+  "features": {
+    "beta": {
+      "lo": 1.5,
+      "hi": 3.2
+    },
+    "H_hurst": {
+      "lo": -0.25,
+      "hi": 0.7
+    },
+    "D_mean": {
+      "lo": 1.0,
+      "hi": 1.6
+    },
+    "D_corr": {
+      "lo": 0.7,
+      "hi": 1.7
+    },
+    "contrast": {
+      "lo": 5,
+      "hi": 40
+    },
+    "spectral_flatness": {
+      "lo": 0.0,
+      "hi": 0.08
+    },
+    "beta_ratio_B": {
+      "lo": 0.9,
+      "hi": 1.05
+    }
+  }
+}

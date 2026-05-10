@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RATDS — Refraction Amplitude Terrain Detection System</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #c9d1d9;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --code-bg: #161b22;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #fff;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-top: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-top: 1.8rem;
+    }
+
+    .abstract {
+      background: var(--code-bg);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .abstract strong {
+      color: var(--fg);
+      font-style: normal;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background: var(--code-bg);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    td {
+      color: var(--fg);
+    }
+
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-family: "SF Mono", Monaco, Consolas, monospace;
+      font-size: 0.85em;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .figure img {
+      max-width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .figure-caption {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .highlight-box {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box h4 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin: 0.4rem 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    .contrib-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .contrib-list li {
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .contrib-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .authors {
+      font-size: 1em;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Refraction Amplitude Terrain Detection System (RATDS)</h1>
+  <h2 style="border:none; color:var(--muted); font-size:1.1rem; margin-top:0;">A Physics-Driven Fractal Framework for
+    Material Recognition from RGB Images</h2>
+  <div class="authors">
+    <strong>Author:</strong> Gerald Enrique Nelson Mc Kenzie<br>
+    <strong>DOI:</strong> 10.5281/zenodo.20057189<br>
+    <strong>ORCID:</strong> 0009-0008-6017-4922<br>
+    <strong>Date:</strong> 05-04-2026<br>
+  </div>
+
+  <div class="abstract">
+    <strong>Abstract.</strong> We present the Refraction Amplitude Terrain Detection System (RATDS), a material
+    recognition framework that reframes image patches as terrain amplitude signals and applies seismic refraction
+    physics combined with fractal dimension theory to identify material composition from standard RGB images. The system
+    extracts a 14-dimensional feature vector from each image patch through five independent fractal estimators —
+    Variance Fractal Dimension (VFD), the Mandelbrot-Richardson divider method, box-counting, correlation dimension, and
+    2D radial spectral β estimation — applied to illumination-normalized RGB channels. A novel set of spectral signature
+    features, including spectral flatness and per-channel β ratios, enables discrimination between materials with
+    similar roughness but different wavelength-dependent reflectance properties. Material profiles are stored as
+    external JSON files and can be empirically calibrated from photographs of known materials without any code
+    modification. The system operates with zero labeled training data in rule-based mode and achieves correct top-1
+    classification of raw silver and gold ore photographs using spectral flatness as the primary discriminator
+    (σ<sub>β</sub> ≈ 0.01 for silver vs. σ<sub>β</sub> ≈ 0.14 for gold). All computations run on CPU at approximately 13
+    ms per 128×128 patch.
+  </div>
+
+  <h2>1. Introduction</h2>
+
+  <p>Material recognition from photographs is a problem that resists simple solutions. The same material — metal, glass,
+    cotton — can look entirely different under different lighting, at different scales, from different viewpoints, or
+    when formed into different objects. Conversely, different materials can share color, brightness, or gross shape
+    while differing only in fine surface texture. This fundamental ambiguity has driven the field toward increasingly
+    data-hungry approaches: modern convolutional neural networks trained on millions of labeled pixels routinely exceed
+    80% accuracy on standard benchmarks, approaching human-level performance.</p>
+
+  <p>Yet this accuracy comes with costs that are prohibitive in many real-world settings. Large labeled datasets are
+    expensive to construct. Trained models are opaque — they produce classifications without any physical explanation of
+    why a given material was identified. Adding a new material class requires retraining. And the learned
+    representations have no grounding in the physical properties of surfaces.</p>
+
+  <p>RATDS takes a different starting point. Rather than learning what materials look like, it starts with what
+    materials <em>are</em> physically: surfaces characterized by roughness, self-similarity, and spectral reflectance
+    properties that determine how they scatter and reflect light. These properties map directly to fractal mathematics.
+    A smooth polished metal surface has a high Hurst exponent (H → 1), steep spectral amplitude decay (β > 3), and low
+    fractal dimension (D < 1.3). A cotton or cardboard surface has a low Hurst exponent (H → 0), flat spectrum (β < 2),
+      and high fractal dimension (D> 1.7).</p>
+
+  <div class="highlight-box">
+    <h4>Key Insight: Spectral Signatures</h4>
+    <p>Different metals have characteristic wavelength-dependent reflectance: silver is nearly spectrally neutral, gold
+      strongly absorbs blue light, and copper moderately absorbs blue while enhancing red. These differences appear as
+      measurable variation in the per-channel spectral exponents β<sub>R</sub>, β<sub>G</sub>, β<sub>B</sub>.</p>
+  </div>
+
+  <h2>2. Mathematical Framework</h2>
+
+  <h3>2.1 2D Radial Power Spectrum</h3>
+
+  <p>For a p×p normalized patch, we compute the 2D discrete Fourier transform with Hann windowing:</p>
+
+  <pre><code>W(x, y) = A_norm(x, y) · w_H(x) · w_H(y)
+F(u, v) = Σ_x Σ_y W(x, y) · exp(−2πi(ux + vy)/p)
+P(u, v) = |F(u, v)|²</code></pre>
+
+  <p>The radial average bins power by frequency magnitude r = √(u² + v²). The spectral exponent β₂d is estimated by
+    log-log linear regression:</p>
+
+  <pre><code>log P_radial(r) = C − β₂d · log r
+β̂₂d = −slope</code></pre>
+
+  <p>For isotropic fBm surfaces, β₂d = 2H + 2 = 6 − 2D.</p>
+
+  <h3>2.2 Spectral Signature Features</h3>
+
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Definition</th>
+      <th>Physical Meaning</th>
+    </tr>
+    <tr>
+      <td><code>σ_β</code></td>
+      <td>std(β_R, β_G, β_B)</td>
+      <td>Spectral flatness — low for neutral metals, high for blue-absorbing metals</td>
+    </tr>
+    <tr>
+      <td><code>ρ_B</code></td>
+      <td>β_B / mean(β)</td>
+      <td>Blue-channel ratio — suppressed for gold, equal for silver</td>
+    </tr>
+    <tr>
+      <td><code>β_spread</code></td>
+      <td>max(β) − min(β)</td>
+      <td>Total spectral variation across channels</td>
+    </tr>
+  </table>
+
+  <h3>2.3 Illumination Normalization</h3>
+
+  <p>Real photographs contain low-frequency shading gradients. We remove these via high-pass filtering:</p>
+
+  <pre><code>A_low(x, y) = G_σ * A_L(x, y)          # σ = 0.25 · patch_size
+A_norm(x, y) = A_L(x, y) − A_low(x, y)</code></pre>
+
+  <h2>3. Material Classification</h2>
+
+  <h3>3.1 JSON Profile System</h3>
+
+  <p>Material profiles are stored as external JSON files in a <code>profiles/</code> directory. Each profile contains
+    feature ranges (5th–95th percentile), calibration metadata, synthetic parameters, and display properties. Profiles
+    are auto-discovered at runtime. Adding a new material requires only creating a new JSON file — no code modification.
+  </p>
+
+  <h3>3.2 Background Removal</h3>
+
+  <p>For product photography with uniform backgrounds, the system automatically detects and masks near-uniform regions
+    before patch extraction. Only foreground patches are analyzed, preventing background pixels from corrupting the
+    median aggregation.</p>
+
+  <h2>4. Experiments</h2>
+
+  <h3>4.1 Validation Images</h3>
+
+  <p>Two real photographs were used for validation:</p>
+  <ul>
+    <li><strong>Silver ore</strong>: 960×640 RGB, raw crystalline surface with smooth facets and rough fracture edges,
+      neutral gray color</li>
+    <li><strong>Gold ore</strong>: 1320×880 RGB, raw crystalline surface with warm yellow coloration</li>
+    <li><strong>Gold chain</strong>: 1651×1651 RGB, polished jewelry on white background (product photography)</li>
+  </ul>
+
+  <h3>4.2 Feature Measurements</h3>
+
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Silver Ore</th>
+      <th>Gold Ore</th>
+      <th>Gold Chain</th>
+      <th>Discriminator</th>
+    </tr>
+    <tr>
+      <td>β (median)</td>
+      <td>2.84</td>
+      <td>2.35</td>
+      <td>2.49</td>
+      <td>Weak</td>
+    </tr>
+    <tr>
+      <td>H (median)</td>
+      <td>0.42</td>
+      <td>0.17</td>
+      <td>0.25</td>
+      <td>Weak</td>
+    </tr>
+    <tr>
+      <td>D_mean</td>
+      <td>1.79</td>
+      <td>1.91</td>
+      <td>1.95</td>
+      <td>Weak</td>
+    </tr>
+    <tr>
+      <td><strong>σ_β</strong></td>
+      <td><strong>0.006</strong></td>
+      <td><strong>0.143</strong></td>
+      <td><strong>0.050</strong></td>
+      <td><strong>Strong</strong></td>
+    </tr>
+    <tr>
+      <td><strong>ρ_B</strong></td>
+      <td><strong>0.998</strong></td>
+      <td><strong>0.953</strong></td>
+      <td><strong>0.972</strong></td>
+      <td><strong>Strong</strong></td>
+    </tr>
+    <tr>
+      <td>β_B</td>
+      <td>2.85</td>
+      <td>2.13</td>
+      <td>2.42</td>
+      <td>Moderate</td>
+    </tr>
+  </table>
+
+  <h3>4.3 Classification Results</h3>
+
+  <table>
+    <tr>
+      <th>Image</th>
+      <th>Top Prediction</th>
+      <th>Confidence</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>Silver ore</td>
+      <td>silver_ore</td>
+      <td>38.5%</td>
+      <td>✓ Correct</td>
+    </tr>
+    <tr>
+      <td>Gold ore</td>
+      <td>gold_ore</td>
+      <td>41.2%</td>
+      <td>✓ Correct</td>
+    </tr>
+    <tr>
+      <td>Gold chain (with bg removal)</td>
+      <td>gold</td>
+      <td>25.4%</td>
+      <td>✓ Correct</td>
+    </tr>
+  </table>
+
+  <h2>5. Figures</h2>
+
+  <div class="figure">
+    <img src="ratds_amplitude.png" alt="Amplitude and Fractal Analysis">
+    <div class="figure-caption">
+      <strong>Figure 1.</strong> Amplitude and fractal analysis of a gold chain product photograph.
+      Left: input image with scanline marker. Center: illumination-normalized patch showing
+      background removal. Right: 2D radial power spectrum with β₂d fit, 1D spectrum for comparison,
+      VFD trace, divider method plot, and complete feature readout panel.
+    </div>
+  </div>
+
+  <div class="figure">
+    <img src="ratds_detection_map.png" alt="Spatial Detection Map">
+    <div class="figure-caption">
+      <strong>Figure 2.</strong> Spatial detection map for gold chain. Left to right: input image,
+      R(x) response map (high at material boundaries), D_mean fractal dimension map, and
+      per-patch material label overlay. Background regions are automatically masked and excluded
+      from analysis. The chain is correctly labeled as <code>gold</code> (polished) with occasional
+      <code>gold_ore</code> labels on rougher link surfaces.
+    </div>
+  </div>
+
+  <div class="figure">
+    <img src="ratds_radar.png" alt="Feature Radar and Predictions">
+    <div class="figure-caption">
+      <strong>Figure 3.</strong> Feature profile radar chart (left) and material prediction
+      confidence bars (right) for the gold chain. The radar shows normalized values for D_VFD,
+      D_divider, D_box, D_corr, H, β, contrast, and spectral flatness. The prediction panel
+      shows <code>gold</code> as the top prediction at 25.4%, followed by plastic (20.2%),
+      rubber (18.8%), and wood (17.8%).
+    </div>
+  </div>
+
+  <h2>6. Discussion</h2>
+
+  <h3>6.1 Why Spectral Signatures Work</h3>
+
+  <p>Silver and gold ores have nearly identical roughness, fractal dimension, and contrast. They differ primarily in
+    their electronic structure: gold has a filled d-band that creates strong interband absorption in the blue region of
+    the visible spectrum (λ < 500 nm), while silver's d-band is deeper in energy, resulting in nearly flat reflectance
+      across the visible range. These physical differences manifest as measurable differences in the per-channel power
+      spectra of reflected light.</p>
+
+      <h3>6.2 Background Removal Impact</h3>
+
+      <p>Product photography with uniform backgrounds presents a unique challenge: the background is often 80–95% of the
+        image area. Without background removal, median aggregation is dominated by uniform white patches, producing β ≈
+        2.0 (flat spectrum) and near-zero contrast — features characteristic of paper or cardboard, not metal. The
+        auto-masking system detects uniform regions via local variance thresholding and analyzes only foreground
+        patches, restoring correct material detection.</p>
+
+      <h3>6.3 Limitations</h3>
+
+      <ul>
+        <li><strong>Profile calibration dependency:</strong> Estimated profiles may have ranges that are too wide or too
+          narrow. Calibrated profiles are marked in JSON metadata.</li>
+        <li><strong>Mid-range material confusion:</strong> Plastic, leather, rubber, and wood have overlapping feature
+          ranges.</li>
+        <li><strong>Illumination color casts:</strong> Strong color casts can affect per-channel β estimates.</li>
+        <li><strong>fBm model assumption:</strong> Surfaces with periodic structure or sharp edges deviate from
+          fractional Brownian motion.</li>
+      </ul>
+
+      <h2>7. Conclusion</h2>
+
+      <p>RATDS presents a physically grounded alternative to black-box deep learning for material recognition from RGB
+        images. By treating image patches as seismic amplitude signals and extracting five independent fractal dimension
+        estimates from their spectral and geometric properties, the system achieves material classification without
+        learned representations. The novel spectral signature features — spectral flatness and per-channel β ratios —
+        enable discrimination between materials with similar roughness but different wavelength-dependent reflectance,
+        such as silver and gold ores.</p>
+
+      <p>The external JSON profile system makes the system extensible: adding a new material requires only running the
+        calibration tool on photographs, with no code modification. The system runs at approximately 13 ms per 128×128
+        patch on a single CPU core, requires no GPU, and provides fully interpretable classifications grounded in
+        physical surface properties.</p>
+
+      <hr>
+
+      <p style="font-size:0.85rem; color:var(--muted);">
+        <strong>References.</strong> See the full paper for complete citations. Key sources: Mandelbrot (1982),
+        Pentland (1984), Florindo & Bruno (2012, 2014), Grassberger & Procaccia (1983),
+        Sharan et al. (2014), Varma & Zisserman (2005).
+      </p>
+
+      <p style="font-size:0.85rem; color:var(--muted);">
+        <strong>Code availability.</strong> The complete implementation, calibration tools, and JSON profiles
+        are available in the accompanying repository. All experiments were run on a standard CPU without GPU
+        acceleration.
+      </p>
+
+</body>
+
+</html>

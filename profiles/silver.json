@@ -1,0 +1,55 @@
+{
+  "name": "silver",
+  "description": "Polished silver, mirror-like surface",
+  "display_color": "#B0BEC5",
+  "calibrated": false,
+  "calibration_date": null,
+  "n_images": 0,
+  "n_patches": 0,
+  "patch_size": 128,
+  "stride": 64,
+  "percentile_margin": 0.1,
+  "source_images": [],
+  "note": "This is an ESTIMATED profile based on theoretical values. Run calibrate.py with real images to improve accuracy.",
+  "synthetic": {
+    "color_tint": [
+      200,
+      200,
+      210
+    ],
+    "H_range": [
+      0.5,
+      0.99
+    ]
+  },
+  "features": {
+    "beta": {
+      "lo": 3.0,
+      "hi": 5.5
+    },
+    "H_hurst": {
+      "lo": 0.5,
+      "hi": 0.99
+    },
+    "D_mean": {
+      "lo": 0.8,
+      "hi": 1.4
+    },
+    "D_corr": {
+      "lo": 0.3,
+      "hi": 1.2
+    },
+    "contrast": {
+      "lo": 5,
+      "hi": 40
+    },
+    "spectral_flatness": {
+      "lo": 0.0,
+      "hi": 0.05
+    },
+    "beta_ratio_B": {
+      "lo": 0.95,
+      "hi": 1.05
+    }
+  }
+}

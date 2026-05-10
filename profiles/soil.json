@@ -1,0 +1,55 @@
+{
+  "name": "soil",
+  "description": "Granular soil texture",
+  "display_color": "#A1887F",
+  "calibrated": false,
+  "calibration_date": null,
+  "n_images": 0,
+  "n_patches": 0,
+  "patch_size": 128,
+  "stride": 64,
+  "percentile_margin": 0.1,
+  "source_images": [],
+  "note": "This is an ESTIMATED profile based on theoretical values. Run calibrate.py with real images to improve accuracy.",
+  "synthetic": {
+    "color_tint": [
+      140,
+      110,
+      80
+    ],
+    "H_range": [
+      -0.75,
+      0.5
+    ]
+  },
+  "features": {
+    "beta": {
+      "lo": 0.5,
+      "hi": 2.3
+    },
+    "H_hurst": {
+      "lo": -0.75,
+      "hi": 0.5
+    },
+    "D_mean": {
+      "lo": 1.4,
+      "hi": 2.1
+    },
+    "D_corr": {
+      "lo": 1.2,
+      "hi": 2.4
+    },
+    "contrast": {
+      "lo": 8,
+      "hi": 55
+    },
+    "spectral_flatness": {
+      "lo": 0.0,
+      "hi": 0.08
+    },
+    "beta_ratio_B": {
+      "lo": 0.9,
+      "hi": 1.05
+    }
+  }
+}

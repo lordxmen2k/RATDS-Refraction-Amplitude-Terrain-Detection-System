@@ -1,0 +1,55 @@
+{
+  "name": "glass",
+  "description": "Smooth transparent glass",
+  "display_color": "#80DEEA",
+  "calibrated": false,
+  "calibration_date": null,
+  "n_images": 0,
+  "n_patches": 0,
+  "patch_size": 128,
+  "stride": 64,
+  "percentile_margin": 0.1,
+  "source_images": [],
+  "note": "This is an ESTIMATED profile based on theoretical values. Run calibrate.py with real images to improve accuracy.",
+  "synthetic": {
+    "color_tint": [
+      220,
+      240,
+      250
+    ],
+    "H_range": [
+      0.5,
+      0.99
+    ]
+  },
+  "features": {
+    "beta": {
+      "lo": 3.0,
+      "hi": 5.5
+    },
+    "H_hurst": {
+      "lo": 0.5,
+      "hi": 0.99
+    },
+    "D_mean": {
+      "lo": 0.6,
+      "hi": 1.4
+    },
+    "D_corr": {
+      "lo": 0.2,
+      "hi": 1.2
+    },
+    "contrast": {
+      "lo": 3,
+      "hi": 35
+    },
+    "spectral_flatness": {
+      "lo": 0.0,
+      "hi": 0.08
+    },
+    "beta_ratio_B": {
+      "lo": 0.9,
+      "hi": 1.05
+    }
+  }
+}

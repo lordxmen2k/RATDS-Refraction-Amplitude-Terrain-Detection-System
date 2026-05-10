@@ -1,0 +1,55 @@
+{
+  "name": "cardboard",
+  "description": "Fibrous cardboard surface",
+  "display_color": "#BCAAA4",
+  "calibrated": false,
+  "calibration_date": null,
+  "n_images": 0,
+  "n_patches": 0,
+  "patch_size": 128,
+  "stride": 64,
+  "percentile_margin": 0.1,
+  "source_images": [],
+  "note": "This is an ESTIMATED profile based on theoretical values. Run calibrate.py with real images to improve accuracy.",
+  "synthetic": {
+    "color_tint": [
+      190,
+      165,
+      130
+    ],
+    "H_range": [
+      -0.6,
+      0.5
+    ]
+  },
+  "features": {
+    "beta": {
+      "lo": 0.8,
+      "hi": 2.5
+    },
+    "H_hurst": {
+      "lo": -0.6,
+      "hi": 0.5
+    },
+    "D_mean": {
+      "lo": 1.3,
+      "hi": 1.9
+    },
+    "D_corr": {
+      "lo": 1.1,
+      "hi": 2.3
+    },
+    "contrast": {
+      "lo": 8,
+      "hi": 48
+    },
+    "spectral_flatness": {
+      "lo": 0.0,
+      "hi": 0.08
+    },
+    "beta_ratio_B": {
+      "lo": 0.9,
+      "hi": 1.05
+    }
+  }
+}

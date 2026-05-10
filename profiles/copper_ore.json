@@ -1,0 +1,55 @@
+{
+  "name": "copper_ore",
+  "description": "Raw copper nuggets, reddish crystalline surface",
+  "display_color": "#B87333",
+  "calibrated": false,
+  "calibration_date": null,
+  "n_images": 0,
+  "n_patches": 0,
+  "patch_size": 128,
+  "stride": 64,
+  "percentile_margin": 0.1,
+  "source_images": [],
+  "note": "This is an ESTIMATED profile based on theoretical values. Run calibrate.py with real images to improve accuracy.",
+  "synthetic": {
+    "color_tint": [
+      170,
+      110,
+      70
+    ],
+    "H_range": [
+      -0.3,
+      1.0
+    ]
+  },
+  "features": {
+    "beta": {
+      "lo": 1.2,
+      "hi": 4.0
+    },
+    "H_hurst": {
+      "lo": -0.3,
+      "hi": 1.0
+    },
+    "D_mean": {
+      "lo": 1.4,
+      "hi": 2.1
+    },
+    "D_corr": {
+      "lo": 0.9,
+      "hi": 2.0
+    },
+    "contrast": {
+      "lo": 20,
+      "hi": 60
+    },
+    "spectral_flatness": {
+      "lo": 0.03,
+      "hi": 0.12
+    },
+    "beta_ratio_B": {
+      "lo": 0.85,
+      "hi": 0.98
+    }
+  }
+}

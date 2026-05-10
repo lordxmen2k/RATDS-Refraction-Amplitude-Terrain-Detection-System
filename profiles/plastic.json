@@ -1,0 +1,55 @@
+{
+  "name": "plastic",
+  "description": "Molded plastic surface",
+  "display_color": "#CE93D8",
+  "calibrated": false,
+  "calibration_date": null,
+  "n_images": 0,
+  "n_patches": 0,
+  "patch_size": 128,
+  "stride": 64,
+  "percentile_margin": 0.1,
+  "source_images": [],
+  "note": "This is an ESTIMATED profile based on theoretical values. Run calibrate.py with real images to improve accuracy.",
+  "synthetic": {
+    "color_tint": [
+      200,
+      180,
+      220
+    ],
+    "H_range": [
+      -0.25,
+      0.8
+    ]
+  },
+  "features": {
+    "beta": {
+      "lo": 1.5,
+      "hi": 3.5
+    },
+    "H_hurst": {
+      "lo": -0.25,
+      "hi": 0.8
+    },
+    "D_mean": {
+      "lo": 1.0,
+      "hi": 1.7
+    },
+    "D_corr": {
+      "lo": 0.6,
+      "hi": 1.8
+    },
+    "contrast": {
+      "lo": 8,
+      "hi": 50
+    },
+    "spectral_flatness": {
+      "lo": 0.0,
+      "hi": 0.1
+    },
+    "beta_ratio_B": {
+      "lo": 0.85,
+      "hi": 1.05
+    }
+  }
+}

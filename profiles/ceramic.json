@@ -1,0 +1,55 @@
+{
+  "name": "ceramic",
+  "description": "Glazed ceramic surface",
+  "display_color": "#E0F2F1",
+  "calibrated": false,
+  "calibration_date": null,
+  "n_images": 0,
+  "n_patches": 0,
+  "patch_size": 128,
+  "stride": 64,
+  "percentile_margin": 0.1,
+  "source_images": [],
+  "note": "This is an ESTIMATED profile based on theoretical values. Run calibrate.py with real images to improve accuracy.",
+  "synthetic": {
+    "color_tint": [
+      235,
+      240,
+      235
+    ],
+    "H_range": [
+      0.0,
+      0.9
+    ]
+  },
+  "features": {
+    "beta": {
+      "lo": 2.0,
+      "hi": 4.0
+    },
+    "H_hurst": {
+      "lo": 0.0,
+      "hi": 0.9
+    },
+    "D_mean": {
+      "lo": 0.8,
+      "hi": 1.5
+    },
+    "D_corr": {
+      "lo": 0.5,
+      "hi": 1.6
+    },
+    "contrast": {
+      "lo": 5,
+      "hi": 45
+    },
+    "spectral_flatness": {
+      "lo": 0.0,
+      "hi": 0.08
+    },
+    "beta_ratio_B": {
+      "lo": 0.9,
+      "hi": 1.05
+    }
+  }
+}
